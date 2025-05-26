@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inventory-management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Sidebar -->
+    <!-- Toggle Button (visible only on mobile) -->
+
+
+<!-- Sidebar -->
+<div id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-white shadow-xl z-50 
+  transform -translate-x-full lg:translate-x-0 
+  transition-transform duration-300 ease-in-out">
+
+  <!-- Logo -->
+  <div class="flex items-center justify-center h-20 bg-white">
+    <div class="w-44 h-10 rounded-lg flex items-center justify-center">
+      <img src="src/images/SV0KVFfZjW2ETXN.png" alt="">
+    </div>
+  </div>
+
+  <!-- Close Button (mobile only) -->
+  <div class="lg:hidden flex justify-end px-4 py-2">
+    <button id="sidebarClose" class="text-black text-xl hover:text-red-400">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <!-- Nav -->
+  <nav class="mt-4 px-4 overflow-y-auto h-[calc(100vh-10rem)]">
+    <div class="space-y-2">
+      <a href="Dashboard.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-home mr-3 text-gray-400 group-hover:text-white"></i>
+        Dashboard
+      </a>
+      <a href="Customer Management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-users mr-3 text-gray-400 group-hover:text-white"></i>
+        Customer Management
+      </a>
+      <a href="vehicle-management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-chart-bar mr-3 text-gray-400 group-hover:text-white"></i>
+        Vehicle Management
+      </a>
+      <a href="Job Card Managemen.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-shopping-cart mr-3 text-gray-400 group-hover:text-white"></i>
+        Job Card Management
+      </a>
+      <a href="Inventory Management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-100 bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-box mr-3 text-gray-100 group-hover:text-white"></i>
+        Inventory Management
+      </a>
+      <a href="Invoice.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-file-invoice mr-3 text-gray-400 group-hover:text-white"></i>
+        Billing Invoice
+      </a>
+      <a href="booking.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-calendar-check mr-3 text-gray-400 group-hover:text-white"></i>
+        Appointment / Booking
+      </a>
+      <a href="staff-management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-tools mr-3 text-gray-400 group-hover:text-white"></i>
+        Mechanic/Staff Management
+      </a>
+      <a href="repoarts.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-chart-line mr-3 text-gray-400 group-hover:text-white"></i>
+        Reports
+      </a>
+      <a href="Settings.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-cog mr-3 text-gray-400 group-hover:text-white"></i>
+        Settings
+      </a>
+    </div>
+    
+  </nav>
+
+  <!-- Logout -->
+
+</div>
+
+ 
+
+    <!-- Main Content -->
+    <div class="lg:ml-64 flex flex-col min-h-screen">
+        <!-- Top Header -->
+     <header class="bg-white mt-1 shadow-sm border-b border-gray-200">
+  <div class="px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    
+    <!-- Left Section -->
+    <div class="flex items-center gap-4">
+      <!-- Sidebar toggle for mobile -->
+      <button id="sidebarToggle" class="lg:hidden p-2 text-gray-600 hover:bg-gray-100 rounded">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Right Section -->
+    <div class="flex items-center space-x-4 w-full sm:w-auto">
+      <!-- Search Input -->
+      <div class="relative w-full sm:w-64">
+        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        <input type="text" placeholder="Search..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+      </div>
+
+      <!-- Notification Icon -->
+      <div class="relative">
+        <button class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors">
+          <i class="fas fa-bell text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Profile Dropdown -->
+      <div class="relative">
+        <button id="profileButton" class="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none">
+          <img src="https://www.pngmart.com/files/21/Admin-Profile-Vector-PNG-Image.png" alt="Profile" class="w-8 h-8 rounded-full" />
+          <i class="fas fa-chevron-down text-gray-500"></i>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div id="profileDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a>
+          <a href="index.html" class="block px-4 py-2 text-red-600 hover:bg-red-100">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+</header>
+<!-- Add Part Button -->
+
+<!-- Parts Table -->
+ <div class="p-4">
+    <!-- Top Buttons -->
+    <div class="p-4 flex flex-wrap justify-between items-center gap-4 mx-auto">
+      <button onclick="openModal()" class="bg-blue-600 text-white px-5 py-2 rounded-xl hover:bg-blue-700 transition">
+        + Add Part
+      </button>
+      <div class="flex gap-3">
+        <button onclick="downloadTemplate()" class="bg-green-600 text-white px-5 py-2 rounded-xl hover:bg-green-700 transition">
+          Download Template
+        </button>
+        <label class="relative cursor-pointer bg-purple-600 text-white px-5 py-2 rounded-xl hover:bg-purple-700 transition">
+          <span>Bulk Upload</span>
+          <input type="file" id="bulkUploadInput" accept=".csv" onchange="handleBulkUpload(event)"
+                 class="absolute inset-0 opacity-0 cursor-pointer" />
+        </label>
+      </div>
+    </div>
+
+    <!-- Parts Table -->
+    <div class="p-4 max-w-7xl bg-white rounded-2xl shadow mt-4 overflow-x-auto">
+      <h2 class="text-xl font-semibold mb-4">Parts List</h2>
+      <table class="w-full text-sm text-left border-collapse">
+        <thead class="bg-purple-700 text-white">
+          <tr>
+            <th class="px-4 py-3 border-b">Part Name</th>
+            <th class="px-4 py-3 border-b">Brand</th>
+            <th class="px-4 py-3 border-b text-right">Unit Price (OMR)</th>
+            <th class="px-4 py-3 border-b text-center">Stock Qty</th>
+            <th class="px-4 py-3 border-b">Vendor</th>
+            <th class="px-4 py-3 border-b text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="partsTableBody" class="divide-y"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 px-4">
+    <div class="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto">
+      <div class="flex justify-between items-center mb-4">
+        <h2 id="modalTitle" class="text-xl font-bold">Add New Part</h2>
+        <button onclick="closeModal()" class="text-gray-400 hover:text-black text-3xl font-bold leading-none" aria-label="Close modal">
+          &times;
+        </button>
+      </div>
+      <form id="partForm" class="grid grid-cols-1 sm:grid-cols-2 gap-4" onsubmit="handleFormSubmit(event)">
+        <input type="hidden" id="editIndex" value="-1" />
+        <input type="text" id="partName" placeholder="Part Name" class="p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+        <input type="text" id="brand" placeholder="Brand" class="p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+        <input type="number" id="price" placeholder="Unit Price (OMR)" class="p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" required step="0.001" min="0" />
+        <input type="number" id="stockQty" placeholder="Stock Qty" class="p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500" required min="0" />
+        <textarea id="vendor" placeholder="Vendor Info" class="sm:col-span-2 p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y" rows="3"></textarea>
+        <div class="sm:col-span-2 flex justify-end space-x-3 pt-4">
+          <button type="button" onclick="closeModal()" class="px-5 py-2 bg-gray-200 rounded-xl hover:bg-gray-300 transition">Cancel</button>
+          <button type="submit" class="px-5 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const modal = document.getElementById('modal');
+    const tableBody = document.getElementById('partsTableBody');
+    const form = document.getElementById('partForm');
+    const modalTitle = document.getElementById('modalTitle');
+
+    let parts = [];
+
+    function openModal() {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      resetForm();
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const index = parseInt(document.getElementById('editIndex').value);
+      const part = {
+        name: document.getElementById('partName').value.trim(),
+        brand: document.getElementById('brand').value.trim(),
+        price: parseFloat(document.getElementById('price').value).toFixed(3),
+        qty: parseInt(document.getElementById('stockQty').value),
+        vendor: document.getElementById('vendor').value.trim()
+      };
+
+      if (index === -1) {
+        parts.push(part);
+      } else {
+        parts[index] = part;
+      }
+      renderTable();
+      closeModal();
+    }
+
+    function renderTable() {
+      tableBody.innerHTML = parts.map((part, i) => {
+        const isLowStock = part.qty < 5;
+        return `
+          <tr class="${isLowStock ? 'bg-red-50' : ''}">
+            <td class="px-4 py-3 border-b">${part.name}</td>
+            <td class="px-4 py-3 border-b">${part.brand}</td>
+            <td class="px-4 py-3 border-b text-right">${part.price}</td>
+            <td class="px-4 py-3 border-b text-center">
+              ${part.qty}
+              ${isLowStock ? '<span class="text-red-600 font-semibold ml-1">(Low)</span>' : ''}
+            </td>
+            <td class="px-4 py-3 border-b">${part.vendor}</td>
+            <td class="px-4 py-3 border-b text-center space-x-2">
+              <button onclick="editPart(${i})" class="text-blue-600 hover:underline">Edit</button>
+              <button onclick="deletePart(${i})" class="text-red-600 hover:underline">Delete</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function editPart(index) {
+      const part = parts[index];
+      document.getElementById('editIndex').value = index;
+      document.getElementById('partName').value = part.name;
+      document.getElementById('brand').value = part.brand;
+      document.getElementById('price').value = part.price;
+      document.getElementById('stockQty').value = part.qty;
+      document.getElementById('vendor').value = part.vendor;
+      modalTitle.innerText = 'Edit Part';
+      openModal();
+    }
+
+    function deletePart(index) {
+      if (confirm('Are you sure you want to delete this part?')) {
+        parts.splice(index, 1);
+        renderTable();
+        resetForm();
+      }
+    }
+
+    function resetForm() {
+      form.reset();
+      document.getElementById('editIndex').value = -1;
+      modalTitle.innerText = 'Add New Part';
+    }
+
+    function downloadTemplate() {
+      const csvContent = `Part Name,Brand,Unit Price,Stock Qty,Vendor\nSample Part 1,Brand A,1.000,10,Vendor X\nSample Part 2,Brand B,0.500,3,Vendor Y\n`;
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'parts_template.csv';
+      link.click();
+    }
+
+    function handleBulkUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const lines = e.target.result.split('\n').filter(Boolean);
+        for (let i = 1; i < lines.length; i++) {
+          const row = lines[i].split(',');
+          if (row.length < 5) continue;
+          const part = {
+            name: row[0].trim(),
+            brand: row[1].trim(),
+            price: parseFloat(row[2]).toFixed(3),
+            qty: parseInt(row[3]),
+            vendor: row[4].trim()
+          };
+          if (!isNaN(part.price) && !isNaN(part.qty)) {
+            parts.push(part);
+          }
+        }
+        renderTable();
+        event.target.value = '';
+      };
+      reader.readAsText(file);
+    }
+  </script>
+
+    </div>
+
+    <!-- JavaScript for sidebar toggle -->
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    document.getElementById('sidebarToggle').addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+    });
+
+    document.getElementById('sidebarClose').addEventListener('click', () => {
+        sidebar.classList.add('-translate-x-full');
+    });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const profileBtn = document.getElementById('profileButton');
+    const dropdown = document.getElementById('profileDropdown');
+
+    profileBtn.addEventListener('click', () => {
+      dropdown.classList.toggle('hidden');
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!profileBtn.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>

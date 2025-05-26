@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Sidebar -->
+    <!-- Toggle Button (visible only on mobile) -->
+
+
+<!-- Sidebar -->
+<div id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-white shadow-xl z-50 
+  transform -translate-x-full lg:translate-x-0 
+  transition-transform duration-300 ease-in-out">
+
+  <!-- Logo -->
+  <div class="flex items-center justify-center h-20 bg-white">
+    <div class="w-44 h-10 rounded-lg flex items-center justify-center">
+     <img src="src/images/SV0KVFfZjW2ETXN.png" alt="">
+    </div>
+  </div>
+
+  <!-- Close Button (mobile only) -->
+  <div class="lg:hidden flex justify-end px-4 py-2">
+    <button id="sidebarClose" class="text-black text-xl hover:text-red-400">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <!-- Nav -->
+   <nav class="mt-4 px-4 overflow-y-auto h-[calc(100vh-10rem)]">
+    <div class="space-y-2">
+      <a href="Dashboard.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-home mr-3 text-gray-400 group-hover:text-white"></i>
+        Dashboard
+      </a>
+      <a href="Customer Management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-users mr-3 text-gray-400 group-hover:text-white"></i>
+        Customer Management
+      </a>
+      <a href="vehicle-management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-chart-bar mr-3 text-gray-400 group-hover:text-white"></i>
+        Vehicle Management
+      </a>
+      <a href="Job Card Managemen.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-shopping-cart mr-3 text-gray-400 group-hover:text-white"></i>
+        Job Card Management
+      </a>
+      <a href="Inventory Management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-box mr-3 text-gray-400 group-hover:text-white"></i>
+        Inventory Management
+      </a>
+      <a href="Invoice.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-file-invoice mr-3 text-gray-400 group-hover:text-white"></i>
+        Billing Invoice
+      </a>
+      <a href="booking.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-calendar-check mr-3 text-gray-400 group-hover:text-white"></i>
+        Appointment / Booking
+      </a>
+      <a href="staff-management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-tools mr-3 text-gray-400 group-hover:text-white"></i>
+        Mechanic/Staff Management
+      </a>
+      <a href="repoarts.html" class="sidebar-link flex items-center px-4 py-3 text-gray-100 bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-chart-line mr-3 text-gray-100 group-hover:text-white"></i>
+        Reports
+      </a>
+      <a href="Settings.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-cog mr-3 text-gray-400 group-hover:text-white"></i>
+        Settings
+      </a>
+    </div>
+    
+  </nav>
+
+  <!-- Logout -->
+
+</div>
+
+ 
+
+    <!-- Main Content -->
+    <div class="lg:ml-64 flex flex-col min-h-screen">
+        <!-- Top Header -->
+     <header class="bg-white mt-1 shadow-sm border-b border-gray-200">
+  <div class="px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    
+    <!-- Left Section -->
+    <div class="flex items-center gap-4">
+      <!-- Sidebar toggle for mobile -->
+      <button id="sidebarToggle" class="lg:hidden p-2 text-gray-600 hover:bg-gray-100 rounded">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Right Section -->
+    <div class="flex items-center space-x-4 w-full sm:w-auto">
+      <!-- Search Input -->
+      <div class="relative w-full sm:w-64">
+        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        <input type="text" placeholder="Search..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+      </div>
+
+      <!-- Notification Icon -->
+      <div class="relative">
+        <button class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors">
+          <i class="fas fa-bell text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Profile Dropdown -->
+      <div class="relative">
+        <button id="profileButton" class="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none">
+          <img src="https://www.pngmart.com/files/21/Admin-Profile-Vector-PNG-Image.png" alt="Profile" class="w-8 h-8 rounded-full" />
+          <i class="fas fa-chevron-down text-gray-500"></i>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div id="profileDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a>
+          <a href="index.html" class="block px-4 py-2 text-red-600 hover:bg-red-100">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="min-h-screen bg-gray-100 font-sans text-gray-900">
+  <header class=" py-6 px-8 ">
+    <h1 class="text-2xl font-medium ">Reports Dashboard</h1>
+  </header>
+
+  <main class="max-w-screen-xl mx-auto p-6 space-y-8">
+
+    <!-- Filters Section -->
+    <section class="bg-white p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-semibold mb-6 border-b pb-3">Filters</h2>
+      <form id="filtersForm" class="grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
+
+        <!-- Date Range -->
+        <div>
+          <label for="startDate" class="block font-medium mb-1">Start Date</label>
+          <input
+            type="date"
+            id="startDate"
+            name="startDate"
+            class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          />
+        </div>
+
+        <div>
+          <label for="endDate" class="block font-medium mb-1">End Date</label>
+          <input
+            type="date"
+            id="endDate"
+            name="endDate"
+            class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          />
+        </div>
+
+        <!-- Customer -->
+        <div>
+          <label for="customer" class="block font-medium mb-1">Customer</label>
+          <select
+            id="customer"
+            name="customer"
+            class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          >
+            <option value="">Select Customer</option>
+            <option value="Customer A">Customer A</option>
+            <option value="Customer B">Customer B</option>
+            <option value="Customer C">Customer C</option>
+          </select>
+        </div>
+
+        <!-- Vehicle -->
+        <div>
+          <label for="vehicle" class="block font-medium mb-1">Vehicle</label>
+          <select
+            id="vehicle"
+            name="vehicle"
+            class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          >
+            <option value="">Select Vehicle</option>
+            <option value="Car">Car</option>
+            <option value="Motorbike">Motorbike</option>
+            <option value="Truck">Truck</option>
+          </select>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="md:col-span-4 flex justify-start space-x-4 pt-4">
+          <button
+            type="submit"
+            class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-md hover:bg-blue-700 transition"
+          >
+            Apply Filters
+          </button>
+          <button
+            type="button"
+            id="clearFilters"
+            class="border border-gray-400 px-6 py-2 rounded-md hover:bg-gray-100 transition"
+          >
+            Clear
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Reports Section -->
+    <section class="bg-white p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-semibold mb-6 border-b pb-3">Reports</h2>
+      <div class="flex flex-wrap gap-4 mb-8">
+        <button
+          id="dailyIncomeBtn"
+          class="flex-1 md:flex-none bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition"
+        >
+          Daily Income Report
+        </button>
+        <button
+          id="completedJobsBtn"
+          class="flex-1 md:flex-none bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition"
+        >
+          Completed Jobs
+        </button>
+        <button
+          id="outstandingPaymentsBtn"
+          class="flex-1 md:flex-none bg-red-600 text-white px-6 py-3 rounded-md hover:bg-red-700 transition"
+        >
+          Outstanding Payments
+        </button>
+        <button
+          id="stockUsedBtn"
+          class="flex-1 md:flex-none bg-yellow-600 text-white px-6 py-3 rounded-md hover:bg-yellow-700 transition"
+        >
+          Stock Used Report
+        </button>
+      </div>
+
+      <!-- Report Output -->
+      <div
+        id="reportOutput"
+        class="min-h-[150px] border border-gray-300 rounded-md p-6 text-gray-700 bg-gray-50 overflow-auto max-h-[400px]"
+      >
+        Please select a report and apply filters.
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Mock data for reports
+    const dailyIncomeData = [
+      { date: '2025-05-20', customer: 'Customer A', vehicle: 'Car', amount: 200 },
+      { date: '2025-05-21', customer: 'Customer B', vehicle: 'Truck', amount: 450 },
+      { date: '2025-05-22', customer: 'Customer A', vehicle: 'Motorbike', amount: 150 },
+      { date: '2025-05-22', customer: 'Customer C', vehicle: 'Car', amount: 300 },
+    ];
+
+    const completedJobsData = [
+      { date: '2025-05-20', customer: 'Customer A', vehicle: 'Car', job: 'Oil Change' },
+      { date: '2025-05-21', customer: 'Customer B', vehicle: 'Truck', job: 'Brake Repair' },
+      { date: '2025-05-22', customer: 'Customer A', vehicle: 'Motorbike', job: 'Chain Replacement' },
+      { date: '2025-05-22', customer: 'Customer C', vehicle: 'Car', job: 'Tire Rotation' },
+    ];
+
+    const outstandingPaymentsData = [
+      { dueDate: '2025-06-01', customer: 'Customer A', vehicle: 'Car', amountDue: 100 },
+      { dueDate: '2025-05-30', customer: 'Customer B', vehicle: 'Truck', amountDue: 250 },
+      { dueDate: '2025-06-05', customer: 'Customer C', vehicle: 'Motorbike', amountDue: 75 },
+    ];
+
+    const stockUsedData = [
+      { date: '2025-05-20', customer: 'Customer A', vehicle: 'Car', part: 'Brake Pad', quantity: 2 },
+      { date: '2025-05-21', customer: 'Customer B', vehicle: 'Truck', part: 'Oil Filter', quantity: 1 },
+      { date: '2025-05-22', customer: 'Customer A', vehicle: 'Motorbike', part: 'Chain', quantity: 1 },
+      { date: '2025-05-22', customer: 'Customer C', vehicle: 'Car', part: 'Tire', quantity: 4 },
+    ];
+
+    const reportOutput = document.getElementById("reportOutput");
+    const filtersForm = document.getElementById("filtersForm");
+    const clearFiltersBtn = document.getElementById("clearFilters");
+
+    // Date filter utility function
+    function filterByDateRange(itemDate, startDate, endDate) {
+      if (!startDate && !endDate) return true;
+      const d = new Date(itemDate);
+      if (startDate && d < new Date(startDate)) return false;
+      if (endDate && d > new Date(endDate)) return false;
+      return true;
+    }
+
+    // Generic data filtering function
+    function filterData(data, filters, dateKey = 'date') {
+      return data.filter(item => {
+        const matchDate = filterByDateRange(item[dateKey], filters.startDate, filters.endDate);
+        const matchCustomer = !filters.customer || item.customer === filters.customer;
+        const matchVehicle = !filters.vehicle || item.vehicle === filters.vehicle;
+        return matchDate && matchCustomer && matchVehicle;
+      });
+    }
+
+    // Generate table HTML from headers and rows
+    function renderTable(headers, rows) {
+      if (rows.length === 0) {
+        return `<p class="text-center text-gray-500 py-8">No data found for selected filters.</p>`;
+      }
+      return `
+        <table class="w-full border-collapse text-left">
+          <thead>
+            <tr>
+              ${headers.map(h => `<th class="border-b border-gray-300 px-4 py-2 bg-gray-100">${h}</th>`).join('')}
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.map(row => `
+              <tr class="odd:bg-white even:bg-gray-50">
+                ${headers.map(h => {
+                  // Convert header to lowercase no spaces for keys, e.g. 'Amount Due' -> 'amountdue'
+                  const key = h.toLowerCase().replace(/\s/g, '');
+                  return `<td class="border-b border-gray-200 px-4 py-2">${row[key] ?? ''}</td>`;
+                }).join('')}
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+    }
+
+    // Report renderers:
+    function renderDailyIncomeReport(filters) {
+      const filtered = filterData(dailyIncomeData, filters);
+      const totalIncome = filtered.reduce((sum, item) => sum + item.amount, 0);
+      const tableRows = filtered.map(item => ({
+        date: item.date,
+        customer: item.customer,
+        vehicle: item.vehicle,
+        amount: `$${item.amount.toFixed(2)}`
+      }));
+      const tableHTML = renderTable(['Date', 'Customer', 'Vehicle', 'Amount'], tableRows);
+      return `
+        <h3 class="text-xl font-semibold mb-4">Daily Income Report</h3>
+        ${tableHTML}
+        <p class="mt-4 font-semibold text-right text-green-700">Total Income: $${totalIncome.toFixed(2)}</p>
+      `;
+    }
+
+    function renderCompletedJobsReport(filters) {
+      const filtered = filterData(completedJobsData, filters);
+      const tableRows = filtered.map(item => ({
+        date: item.date,
+        customer: item.customer,
+        vehicle: item.vehicle,
+        job: item.job
+      }));
+      const tableHTML = renderTable(['Date', 'Customer', 'Vehicle', 'Job'], tableRows);
+      return `
+        <h3 class="text-xl font-semibold mb-4">Completed Jobs</h3>
+        ${tableHTML}
+      `;
+    }
+
+    function renderOutstandingPaymentsReport(filters) {
+      // Filter with 'dueDate' key
+      const filtered = outstandingPaymentsData.filter(item => {
+        const matchDate = filterByDateRange(item.dueDate, filters.startDate, filters.endDate);
+        const matchCustomer = !filters.customer || item.customer === filters.customer;
+        const matchVehicle = !filters.vehicle || item.vehicle === filters.vehicle;
+        return matchDate && matchCustomer && matchVehicle;
+      });
+
+      const totalDue = filtered.reduce((sum, item) => sum + item.amountDue, 0);
+      const tableRows = filtered.map(item => ({
+        duedate: item.dueDate,
+        customer: item.customer,
+        vehicle: item.vehicle,
+        amountdue: `$${item.amountDue.toFixed(2)}`
+      }));
+      const tableHTML = renderTable(['Due Date', 'Customer', 'Vehicle', 'Amount Due'], tableRows);
+      return `
+        <h3 class="text-xl font-semibold mb-4">Outstanding Payments</h3>
+        ${tableHTML}
+        <p class="mt-4 font-semibold text-right text-red-700">Total Outstanding: $${totalDue.toFixed(2)}</p>
+      `;
+    }
+
+    function renderStockUsedReport(filters) {
+      const filtered = filterData(stockUsedData, filters);
+      const totalQuantity = filtered.reduce((sum, item) => sum + item.quantity, 0);
+      const tableRows = filtered.map(item => ({
+        date: item.date,
+        customer: item.customer,
+        vehicle: item.vehicle,
+        part: item.part,
+        quantity: item.quantity
+      }));
+      const tableHTML = renderTable(['Date', 'Customer', 'Vehicle', 'Part', 'Quantity'], tableRows);
+      return `
+        <h3 class="text-xl font-semibold mb-4">Stock Used Report</h3>
+        ${tableHTML}
+        <p class="mt-4 font-semibold text-right text-yellow-700">Total Parts Used: ${totalQuantity}</p>
+      `;
+    }
+
+    // Get current filters from form
+    function getFilters() {
+      return Object.fromEntries(new FormData(filtersForm).entries());
+    }
+
+    // Show message in report output
+    function showMessage(msg) {
+      reportOutput.innerHTML = `<p class="text-center text-gray-500 py-8">${msg}</p>`;
+    }
+
+    // Handle report button clicks
+    function onReportClick(reportType) {
+      const filters = getFilters();
+
+      // Optional: you can allow empty filters - up to you
+      if (!filters.startDate && !filters.endDate && !filters.customer && !filters.vehicle) {
+        showMessage("Please apply at least one filter before viewing a report.");
+        return;
+      }
+
+      let html = '';
+      switch (reportType) {
+        case "Daily Income Report":
+          html = renderDailyIncomeReport(filters);
+          break;
+        case "Completed Jobs":
+          html = renderCompletedJobsReport(filters);
+          break;
+        case "Outstanding Payments":
+          html = renderOutstandingPaymentsReport(filters);
+          break;
+        case "Stock Used Report":
+          html = renderStockUsedReport(filters);
+          break;
+      }
+      reportOutput.innerHTML = html;
+    }
+
+    // Event Listeners
+    document.getElementById('dailyIncomeBtn').addEventListener('click', () => onReportClick("Daily Income Report"));
+    document.getElementById('completedJobsBtn').addEventListener('click', () => onReportClick("Completed Jobs"));
+    document.getElementById('outstandingPaymentsBtn').addEventListener('click', () => onReportClick("Outstanding Payments"));
+    document.getElementById('stockUsedBtn').addEventListener('click', () => onReportClick("Stock Used Report"));
+
+    filtersForm.addEventListener('submit', e => {
+      e.preventDefault();
+      // Trigger the last clicked report button or default message
+      showMessage("Please select a report after applying filters.");
+    });
+
+    clearFiltersBtn.addEventListener('click', () => {
+      filtersForm.reset();
+      showMessage("Filters cleared. Please select a report and apply filters.");
+    });
+
+  </script>
+</div>
+
+
+<script>
+    const sidebar = document.getElementById('sidebar');
+    document.getElementById('sidebarToggle').addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+    });
+
+    document.getElementById('sidebarClose').addEventListener('click', () => {
+        sidebar.classList.add('-translate-x-full');
+    });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const profileBtn = document.getElementById('profileButton');
+    const dropdown = document.getElementById('profileDropdown');
+
+    profileBtn.addEventListener('click', () => {
+      dropdown.classList.toggle('hidden');
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!profileBtn.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>

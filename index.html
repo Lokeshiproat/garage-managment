@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200">
+  <div class="min-h-screen flex items-center justify-center dark:bg-gray-800 p-5">
+    <div class="flex flex-col lg:flex-row w-full max-w-3xl shadow-lg rounded-3xl overflow-hidden">
+      <!-- Left Side - Image Section -->
+      <div class="hidden lg:flex lg:w-1/2 bg-gradient-to-tr from-blue-800 to-purple-700 justify-center items-center relative">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="relative z-10 px-10 text-center">
+          <div class="w-44 h-32 mx-auto rounded-full flex items-center justify-center mb-8">
+            <img src="src/images/iProAT Solutions (White).png" alt="">
+          </div>
+          <!-- <h1 class="text-4xl font-bold text-white mb-4">Welcome Back!</h1>
+          <p class="text-white/80 text-lg mb-8">Login in to continue to your dashboard</p> -->
+        </div>
+        <!-- Decorative Circles -->
+        <div class="absolute -bottom-32 -left-40 w-64 h-64 border-2 border-white/30 rounded-full"></div>
+        <div class="absolute -bottom-40 -left-20 w-64 h-64 border-2 border-white/30 rounded-full"></div>
+        <div class="absolute top-0 -right-20 w-44 h-44 border-2 border-white/30 rounded-full"></div>
+      </div>
+
+      <!-- Right Side - Form Section -->
+      <div class="flex flex-col justify-center items-center w-full lg:w-1/2 bg-white px-8 py-12">
+        <div class="w-full max-w-md space-y-6">
+          <h2 class="text-3xl font-bold text-center text-gray-800">Login</h2>
+          <form id="loginForm" class="space-y-5">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Email</label>
+              <input type="email" id="email" required
+                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Password</label>
+              <input type="password" id="password" required
+                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Role</label>
+              <select id="role"
+                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900">
+                <option>Admin</option>
+                <option>Service Advisor</option>
+                <option>Mechanic</option>
+              </select>
+            </div>
+            <div class="flex justify-between text-sm text-blue-600">
+              <a href="#" class="hover:underline">Forgot Password?</a>
+              <button type="button" id="openSignup" class="hover:underline">Create Account</button>
+            </div>
+           <a href="Dashboard.html"
+   class="block text-center w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-200">
+   Login
+</a>
+          </form>
+
+          <!-- Removed old Sign Up link button -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div id="signupModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-xl max-w-md w-full p-8 relative">
+      <button id="closeSignup" class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl font-bold">&times;</button>
+      <h2 class="text-3xl font-bold text-center mb-6">Sign Up</h2>
+      <form id="signupForm" class="space-y-5">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Full Name</label>
+          <input type="text" id="signupName" required
+            class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" id="signupEmail" required
+            class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Password</label>
+          <input type="password" id="signupPassword" required
+            class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Confirm Password</label>
+          <input type="password" id="signupConfirmPassword" required
+            class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Role</label>
+          <select id="signupRole"
+            class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900">
+            <option>Admin</option>
+            <option>Service Advisor</option>
+            <option>Mechanic</option>
+          </select>
+        </div>
+        <a href="Dashboard.html"
+   class="block text-center w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-200">
+   sign in
+</a>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Login form submit (existing)
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const role = document.getElementById('role').value;
+
+      if (role === 'Admin' && password === 'password') {
+        window.location.href = 'dashboard/index.html';
+      } else {
+        alert('Invalid credentials for ' + role);
+      }
+    });
+
+    // Modal open and close handlers
+    const signupModal = document.getElementById('signupModal');
+    const openSignupBtn = document.getElementById('openSignup');
+    const closeSignupBtn = document.getElementById('closeSignup');
+
+    openSignupBtn.addEventListener('click', () => {
+      signupModal.classList.remove('hidden');
+    });
+
+    closeSignupBtn.addEventListener('click', () => {
+      signupModal.classList.add('hidden');
+    });
+
+    // Optional: close modal when clicking outside modal content
+    signupModal.addEventListener('click', (e) => {
+      if (e.target === signupModal) {
+        signupModal.classList.add('hidden');
+      }
+    });
+
+    // Signup form submit handler (you can add your validation here)
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('signupName').value;
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+      const confirmPassword = document.getElementById('signupConfirmPassword').value;
+      const role = document.getElementById('signupRole').value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
+
+      // Example: Just alert success for now
+      alert(`Signup successful for ${name} (${role}) with email ${email}`);
+
+      // Close modal after signup
+      signupModal.classList.add('hidden');
+
+      // Reset form (optional)
+      document.getElementById('signupForm').reset();
+    });
+  </script>
+</body>
+</html>

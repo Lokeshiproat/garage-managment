@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Sidebar -->
+    <!-- Toggle Button (visible only on mobile) -->
+
+
+<!-- Sidebar -->
+<div id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-white shadow-xl z-50 
+  transform -translate-x-full lg:translate-x-0 
+  transition-transform duration-300 ease-in-out">
+
+  <!-- Logo -->
+  <div class="flex items-center justify-center h-20 bg-white">
+    <div class="w-44 h-10 rounded-lg flex items-center justify-center">
+     <img src="src/images/SV0KVFfZjW2ETXN.png" alt="">
+    </div>
+  </div>
+
+  <!-- Close Button (mobile only) -->
+  <div class="lg:hidden flex justify-end px-4 py-2">
+    <button id="sidebarClose" class="text-black text-xl hover:text-red-400">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <!-- Nav -->
+  <nav class="mt-4 px-4 overflow-y-auto h-[calc(100vh-10rem)]">
+    <div class="space-y-2">
+      <a href="Dashboard.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-home mr-3 text-gray-400 group-hover:text-white"></i>
+        Dashboard
+      </a>
+      <a href="Customer Management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-[#7F55B1] text-white rounded-lg transition-colors group">
+        <i class="fas fa-users mr-3 text-gray-400 group-hover:text-white"></i>
+        Customer Management
+      </a>
+      <a href="vehicle-management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-chart-bar mr-3 text-gray-400 group-hover:text-white"></i>
+        Vehicle Management
+      </a>
+      <a href="Job Card Managemen.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-shopping-cart mr-3 text-gray-400 group-hover:text-white"></i>
+        Job Card Management
+      </a>
+      <a href="Inventory Management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-box mr-3 text-gray-400 group-hover:text-white"></i>
+        Inventory Management
+      </a>
+      <a href="Invoice.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-file-invoice mr-3 text-gray-400 group-hover:text-white"></i>
+        Billing Invoice
+      </a>
+      <a href="booking.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-calendar-check mr-3 text-gray-400 group-hover:text-white"></i>
+        Appointment / Booking
+      </a>
+      <a href="staff-management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-tools mr-3 text-gray-400 group-hover:text-white"></i>
+        Mechanic/Staff Management
+      </a>
+      <a href="repoarts.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-chart-line mr-3 text-gray-400 group-hover:text-white"></i>
+        Reports
+      </a>
+      <a href="Settings.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-cog mr-3 text-gray-400 group-hover:text-white"></i>
+        Settings
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- Logout -->
+
+</div>
+
+ 
+
+    <!-- Main Content -->
+    <div class="lg:ml-64 flex flex-col min-h-screen">
+        <!-- Top Header -->
+     <header class="bg-white mt-1 shadow-sm border-b border-gray-200">
+  <div class="px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    
+    <!-- Left Section -->
+    <div class="flex items-center gap-4">
+      <!-- Sidebar toggle for mobile -->
+      <button id="sidebarToggle" class="lg:hidden p-2 text-gray-600 hover:bg-gray-100 rounded">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Right Section -->
+    <div class="flex items-center space-x-4 w-full sm:w-auto">
+      <!-- Search Input -->
+      <div class="relative w-full sm:w-64">
+        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        <input type="text" placeholder="Search..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+      </div>
+
+      <!-- Notification Icon -->
+      <div class="relative">
+        <button class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors">
+          <i class="fas fa-bell text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Profile Dropdown -->
+      <div class="relative">
+        <button id="profileButton" class="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none">
+          <img src="https://www.pngmart.com/files/21/Admin-Profile-Vector-PNG-Image.png" alt="Profile" class="w-8 h-8 rounded-full" />
+          <i class="fas fa-chevron-down text-gray-500"></i>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div id="profileDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a>
+          <a href="index.html" class="block px-4 py-2 text-red-600 hover:bg-red-100">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div class="w-full max-w-7xl mx-auto p-4 mt-10">
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-2xl font-medium">Customer Management</h1>
+      <button onclick="openModal()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+        + Add Customer
+      </button>
+    </div>
+
+    <!-- Responsive Table Container -->
+    <div class="overflow-x-auto bg-white rounded-lg shadow">
+      <table class="min-w-full text-sm text-left text-gray-700" id="customerTable">
+        <thead class="bg-[#7F55B1] text-white">
+          <tr>
+            <th class="p-3">Name</th>
+            <th class="p-3">Phone</th>
+            <th class="p-3">Email</th>
+            <th class="p-3">Vehicle Plate Number</th>
+            <th class="p-3">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="customerList"></tbody>
+      </table>
+    </div>
+
+    <!-- View Details Modal -->
+    <div id="viewModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <div class="bg-white rounded-lg w-full max-w-lg p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-semibold">Customer Details</h2>
+          <button onclick="closeViewModal()" class="text-gray-600 hover:text-black">&times;</button>
+        </div>
+        <div class="space-y-2">
+          <p><strong>Full Name:</strong> <span id="viewFullName"></span></p>
+          <p><strong>Mobile:</strong> <span id="viewMobile"></span></p>
+          <p><strong>Email:</strong> <span id="viewEmail"></span></p>
+          <p><strong>Address:</strong> <span id="viewAddress"></span></p>
+          <p><strong>Vehicles Details:</strong> <span id="viewVehicles"></span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add/Edit Modal -->
+    <div id="customerModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <div class="bg-white rounded-lg w-full max-w-xl p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-semibold">Add / Edit Customer</h2>
+          <button onclick="closeModal()" class="text-gray-600 hover:text-black">&times;</button>
+        </div>
+        <form class="space-y-4" id="customerForm">
+          <input type="hidden" id="editIndex">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Full Name</label>
+            <input type="text" id="fullName" class="mt-1 block w-full border rounded-md p-2" required />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Mobile</label>
+            <input type="tel" id="mobile" class="mt-1 block w-full border rounded-md p-2" required />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" id="email" class="mt-1 block w-full border rounded-md p-2" required />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Address</label>
+            <textarea id="address" class="mt-1 block w-full border rounded-md p-2" required></textarea>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Vehicles Details</label>
+            <div id="vehicleList" class="space-y-2">
+              <input type="text" class="block w-full border rounded-md p-2 vehicle-input" placeholder="Vehicle Plate Number" required />
+            </div>
+            <button type="button" onclick="addVehicleField()" class="text-sm text-blue-600 hover:underline mt-2">+ Add another vehicle</button>
+          </div>
+          <div class="pt-4 text-right">
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save Customer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const customerList = document.getElementById('customerList');
+    const form = document.getElementById('customerForm');
+    const modal = document.getElementById('customerModal');
+    const viewModal = document.getElementById('viewModal');
+    const editIndex = document.getElementById('editIndex');
+
+    let customers = [];
+
+    function openModal(index = null) {
+      form.reset();
+      document.getElementById('vehicleList').innerHTML = '<input type="text" class="block w-full border rounded-md p-2 vehicle-input" placeholder="Vehicle Plate Number" required />';
+      if (index !== null) {
+        const customer = customers[index];
+        document.getElementById('fullName').value = customer.fullName;
+        document.getElementById('mobile').value = customer.mobile;
+        document.getElementById('email').value = customer.email;
+        document.getElementById('address').value = customer.address;
+        document.getElementById('vehicleList').innerHTML = customer.vehicles.map(vehicle => `<input type="text" value="${vehicle}" class="block w-full border rounded-md p-2 vehicle-input" required />`).join('');
+        editIndex.value = index;
+      } else {
+        editIndex.value = '';
+      }
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+    }
+
+    function openViewModal(index) {
+      const c = customers[index];
+      document.getElementById('viewFullName').textContent = c.fullName;
+      document.getElementById('viewMobile').textContent = c.mobile;
+      document.getElementById('viewEmail').textContent = c.email;
+      document.getElementById('viewAddress').textContent = c.address;
+      document.getElementById('viewVehicles').textContent = c.vehicles.join(', ');
+      viewModal.classList.remove('hidden');
+    }
+
+    function closeViewModal() {
+      viewModal.classList.add('hidden');
+    }
+
+    function addVehicleField() {
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.placeholder = 'Vehicle Plate Number';
+      input.className = 'block w-full border rounded-md p-2 vehicle-input';
+      document.getElementById('vehicleList').appendChild(input);
+    }
+
+    function renderCustomers() {
+      customerList.innerHTML = customers.map((c, i) => `
+        <tr class="border-b hover:bg-gray-50">
+          <td class="p-3">${c.fullName}</td>
+          <td class="p-3">${c.mobile}</td>
+          <td class="p-3">${c.email}</td>
+          <td class="p-3">${c.vehicles[0] || ''}</td>
+          <td class="p-3 space-x-2 whitespace-nowrap">
+            <button class="text-blue-600 hover:underline" onclick="openViewModal(${i})">View</button>
+            <button class="text-green-600 hover:underline" onclick="openModal(${i})">Edit</button>
+            <button class="text-red-600 hover:underline" onclick="deleteCustomer(${i})">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function deleteCustomer(index) {
+      customers.splice(index, 1);
+      renderCustomers();
+    }
+
+    form.onsubmit = function(e) {
+      e.preventDefault();
+      const fullName = document.getElementById('fullName').value;
+      const mobile = document.getElementById('mobile').value;
+      const email = document.getElementById('email').value;
+      const address = document.getElementById('address').value;
+      const vehicles = Array.from(document.querySelectorAll('.vehicle-input')).map(i => i.value);
+
+      const customer = { fullName, mobile, email, address, vehicles };
+      if (editIndex.value) {
+        customers[editIndex.value] = customer;
+      } else {
+        customers.push(customer);
+      }
+      renderCustomers();
+      closeModal();
+    };
+  </script>
+        <!-- Main Dashboard Content -->
+      
+
+    </div>
+
+    <!-- JavaScript for sidebar toggle -->
+ <script>
+  const sidebar = document.getElementById('sidebar');
+  document.getElementById('sidebarToggle')?.addEventListener('click', () => {
+    sidebar.classList.toggle('-translate-x-full');
+  });
+
+  document.getElementById('sidebarClose')?.addEventListener('click', () => {
+    sidebar.classList.add('-translate-x-full');
+  });
+</script>
+
+<!-- Profile dropdown script -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const profileBtn = document.getElementById('profileButton');
+    const dropdown = document.getElementById('profileDropdown');
+
+    if (profileBtn) {
+      profileBtn.addEventListener('click', () => {
+        dropdown.classList.toggle('hidden');
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (profileBtn && dropdown && !profileBtn.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
+<!-- Highlight active sidebar link robust script -->
+<!-- Highlight active sidebar link robust script -->
+<
+
+
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Invoice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Sidebar -->
+    <!-- Toggle Button (visible only on mobile) -->
+
+
+<!-- Sidebar -->
+<div id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-white shadow-xl z-50 
+  transform -translate-x-full lg:translate-x-0 
+  transition-transform duration-300 ease-in-out">
+
+  <!-- Logo -->
+  <div class="flex items-center justify-center h-20 bg-white">
+    <div class="w-44 h-10 rounded-lg flex items-center justify-center">
+      <img src="src/images/SV0KVFfZjW2ETXN.png" alt="">
+    </div>
+  </div>
+
+  <!-- Close Button (mobile only) -->
+  <div class="lg:hidden flex justify-end px-4 py-2">
+    <button id="sidebarClose" class="text-black text-xl hover:text-red-400">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <!-- Nav -->
+  <nav class="mt-4 px-4 overflow-y-auto h-[calc(100vh-10rem)]">
+    <div class="space-y-2">
+      <a href="Dashboard.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-home mr-3 text-gray-400 group-hover:text-white"></i>
+        Dashboard
+      </a>
+      <a href="Customer Management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-users mr-3 text-gray-400 group-hover:text-white"></i>
+        Customer Management
+      </a>
+      <a href="vehicle-management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-chart-bar mr-3 text-gray-400 group-hover:text-white"></i>
+        Vehicle Management
+      </a>
+      <a href="Job Card Managemen.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-shopping-cart mr-3 text-gray-400 group-hover:text-white"></i>
+        Job Card Management
+      </a>
+      <a href="Inventory Management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-box mr-3 text-gray-400 group-hover:text-white"></i>
+        Inventory Management
+      </a>
+      <a href="Invoice.html" class="sidebar-link flex items-center px-4 py-3 text-gray-100 bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-file-invoice mr-3 text-gray-100 group-hover:text-white"></i>
+        Billing Invoice
+      </a>
+      <a href="booking.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-calendar-check mr-3 text-gray-400 group-hover:text-white"></i>
+        Appointment / Booking
+      </a>
+      <a href="staff-management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-tools mr-3 text-gray-400 group-hover:text-white"></i>
+        Mechanic/Staff Management
+      </a>
+      <a href="repoarts.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-chart-line mr-3 text-gray-400 group-hover:text-white"></i>
+        Reports
+      </a>
+      <a href="Settings.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-cog mr-3 text-gray-400 group-hover:text-white"></i>
+        Settings
+      </a>
+    </div>
+    
+  </nav>
+
+  <!-- Logout -->
+
+</div>
+
+ 
+
+    <!-- Main Content -->
+    <div class="lg:ml-64 flex flex-col min-h-screen ">
+        <!-- Top Header -->
+     <header class="bg-white  mt-1 shadow-sm border-b border-gray-200">
+  <div class="px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    
+    <!-- Left Section -->
+    <div class="flex items-center gap-4">
+      <!-- Sidebar toggle for mobile -->
+      <button id="sidebarToggle" class="lg:hidden p-2 text-gray-600 hover:bg-gray-100 rounded">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Right Section -->
+    <div class="flex items-center space-x-4 w-full sm:w-auto">
+      <!-- Search Input -->
+      <div class="relative w-full sm:w-64">
+        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        <input type="text" placeholder="Search..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+      </div>
+
+      <!-- Notification Icon -->
+      <div class="relative">
+        <button class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors">
+          <i class="fas fa-bell text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Profile Dropdown -->
+      <div class="relative">
+        <button id="profileButton" class="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none">
+          <img src="https://www.pngmart.com/files/21/Admin-Profile-Vector-PNG-Image.png" alt="Profile" class="w-8 h-8 rounded-full" />
+          <i class="fas fa-chevron-down text-gray-500"></i>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div id="profileDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a>
+          <a href="index.html" class="block px-4 py-2 text-red-600 hover:bg-red-100">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+  
+ 
+<div class="ml-20 my-6">
+    <h1 class="text-2xl font-medium mb-6">Create Invoice</h1>
+    </div>
+ <div class=" w-5/6 mx-auto bg-gray-50  p-6 rounded shadow-lg">
+    <!-- Auto-load from Job Card -->
+    <div class="mb-4">
+      <button id="loadJobCardBtn" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition">
+        Auto-load from Job Card
+      </button>
+    </div>
+
+    <!-- Items Table -->
+    <div class="overflow-x-auto mb-4 ">
+      <table class="w-full table-auto border-collapse border border-gray-300">
+        <thead class="bg-purple-700 text-white">
+          <tr>
+            <th class="border border-gray-300 px-4 py-2 text-left">Description</th>
+            <th class="border border-gray-300 px-4 py-2 text-right">Quantity</th>
+            <th class="border border-gray-300 px-4 py-2 text-right">Price (OMR)</th>
+            <th class="border border-gray-300 px-4 py-2 text-right">Total</th>
+            <th class="border border-gray-300 px-4 py-2 text-center">Remove</th>
+          </tr>
+        </thead>
+        <tbody id="itemsBody">
+          <!-- Dynamic rows here -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mb-6 flex justify-end">
+      <button id="addItemBtn" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">+ Add Item</button>
+    </div>
+
+    <!-- VAT Toggle -->
+    <div class="mb-4 flex items-center gap-4">
+      <label for="vatToggle" class="flex items-center gap-2 font-semibold cursor-pointer">
+        <input type="checkbox" id="vatToggle" class="w-5 h-5" />
+        Add VAT (5%)
+      </label>
+    </div>
+
+    <!-- Discounts & Round Off -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 ">
+      <div>
+        <label for="discountInput" class="font-semibold block mb-1">Discount (OMR):</label>
+        <input type="number" id="discountInput" min="0" step="0.001" placeholder="0.000" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-indigo-500" />
+      </div>
+      <div>
+        <label for="roundOffInput" class="font-semibold block mb-1">Round Off (OMR):</label>
+        <input type="number" id="roundOffInput" step="0.001" placeholder="0.000" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-indigo-500" />
+      </div>
+    </div>
+
+    <!-- Payment Method -->
+    <div class="mb-6 ">
+      <label for="paymentMethod" class="font-semibold block mb-1">Payment Method:</label>
+      <select id="paymentMethod" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-indigo-500">
+        <option>Cash</option>
+        <option>Card</option>
+        <option>Bank Transfer</option>
+      </select>
+    </div>
+
+    <!-- Summary -->
+    <div class="ml-auto bg-gray-50 p-6 rounded border border-gray-300 mb-6">
+      <div class="flex justify-between mb-2">
+        <span class="font-medium">Subtotal:</span>
+        <span id="subtotalAmount">0.000 OMR</span>
+      </div>
+
+      <div class="flex justify-between mb-2">
+        <span class="font-medium">VAT (5%):</span>
+        <span id="vatAmount">0.000 OMR</span>
+      </div>
+
+      <div class="flex justify-between mb-2">
+        <span class="font-medium">Discount:</span>
+        <span id="discountAmount">0.000 OMR</span>
+      </div>
+
+      <div class="flex justify-between mb-4">
+        <span class="font-medium">Round Off:</span>
+        <span id="roundOffAmount">0.000 OMR</span>
+      </div>
+
+      <div class="flex justify-between font-bold text-lg border-t border-gray-300 pt-2">
+        <span>Grand Total:</span>
+        <span id="grandTotalAmount">0.000 OMR</span>
+      </div>
+    </div>
+
+    <!-- Download / Print Buttons -->
+    <div class="flex gap-4 justify-end mb-12">
+      <button id="downloadInvoiceBtn" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Download Invoice</button>
+      <button id="printInvoiceBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Print Invoice</button>
+      <button id="saveInvoiceBtn" class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition">Save Invoice</button>
+    </div>
+
+    <!-- Invoice List -->
+    <h2 class="text-2xl font-bold mb-4">Invoice List</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full table-auto border-collapse border border-gray-300">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="border border-gray-300 px-4 py-2">Invoice No</th>
+            <th class="border border-gray-300 px-4 py-2">Customer</th>
+            <th class="border border-gray-300 px-4 py-2">Total</th>
+            <th class="border border-gray-300 px-4 py-2">Date</th>
+            <th class="border border-gray-300 px-4 py-2">Status</th>
+          </tr>
+        </thead>
+        <tbody id="invoiceListBody">
+          <!-- saved invoices -->
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+<script>
+  // Data store
+  let items = [];
+  let invoices = [];
+  let invoiceCounter = 1;
+
+  // DOM refs
+  const itemsBody = document.getElementById("itemsBody");
+  const addItemBtn = document.getElementById("addItemBtn");
+  const vatToggle = document.getElementById("vatToggle");
+  const discountInput = document.getElementById("discountInput");
+  const roundOffInput = document.getElementById("roundOffInput");
+  const paymentMethodSelect = document.getElementById("paymentMethod");
+
+  const subtotalAmount = document.getElementById("subtotalAmount");
+  const vatAmount = document.getElementById("vatAmount");
+  const discountAmount = document.getElementById("discountAmount");
+  const roundOffAmount = document.getElementById("roundOffAmount");
+  const grandTotalAmount = document.getElementById("grandTotalAmount");
+
+  const downloadInvoiceBtn = document.getElementById("downloadInvoiceBtn");
+  const printInvoiceBtn = document.getElementById("printInvoiceBtn");
+  const saveInvoiceBtn = document.getElementById("saveInvoiceBtn");
+  const loadJobCardBtn = document.getElementById("loadJobCardBtn");
+  const invoiceListBody = document.getElementById("invoiceListBody");
+
+  // Helpers
+  function addItem(description = "", qty = 1, price = 0) {
+    items.push({ description, qty, price });
+    renderItems();
+  }
+
+  function renderItems() {
+    itemsBody.innerHTML = "";
+    items.forEach((item, idx) => {
+      const total = item.qty * item.price;
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td class="border border-gray-300 px-4 py-2">
+          <input type="text" data-idx="${idx}" data-field="description" value="${item.description}" class="w-full border-none focus:ring-0" placeholder="Description" />
+        </td>
+        <td class="border border-gray-300 px-4 py-2 text-right">
+          <input type="number" data-idx="${idx}" data-field="qty" min="1" value="${item.qty}" class="w-16 text-right border-none focus:ring-0" />
+        </td>
+        <td class="border border-gray-300 px-4 py-2 text-right">
+          <input type="number" data-idx="${idx}" data-field="price" min="0" step="0.01" value="${item.price.toFixed(2)}" class="w-24 text-right border-none focus:ring-0" />
+        </td>
+        <td class="border border-gray-300 px-4 py-2 text-right">${total.toFixed(2)}</td>
+        <td class="border border-gray-300 px-4 py-2 text-center">
+          <button data-idx="${idx}" class="text-red-600 font-bold hover:text-red-800">&times;</button>
+        </td>
+      `;
+      itemsBody.appendChild(tr);
+    });
+
+    attachItemEvents();
+    calculateTotals();
+  }
+
+  function attachItemEvents() {
+    itemsBody.querySelectorAll("input").forEach(input => {
+      input.oninput = e => {
+        const idx = parseInt(e.target.dataset.idx);
+        const field = e.target.dataset.field;
+        if (field === "description") {
+          items[idx].description = e.target.value;
+        } else if (field === "qty") {
+          let val = parseInt(e.target.value);
+          if (isNaN(val) || val < 1) val = 1;
+          items[idx].qty = val;
+          e.target.value = val;
+        } else if (field === "price") {
+          let val = parseFloat(e.target.value);
+          if (isNaN(val) || val < 0) val = 0;
+          items[idx].price = val;
+          e.target.value = val.toFixed(2);
+        }
+        calculateTotals();
+        renderItems();
+      };
+    });
+
+    itemsBody.querySelectorAll("button").forEach(btn => {
+      btn.onclick = e => {
+        const idx = parseInt(e.target.dataset.idx);
+        if (!isNaN(idx)) {
+          items.splice(idx, 1);
+          renderItems();
+        }
+      };
+    });
+  }
+
+  function calculateTotals() {
+    let subtotal = 0;
+    items.forEach(item => {
+      subtotal += item.qty * item.price;
+    });
+
+    const discountVal = parseFloat(discountInput.value) || 0;
+    const roundOffVal = parseFloat(roundOffInput.value) || 0;
+    const vatOn = vatToggle.checked;
+
+    let vatVal = 0;
+    const taxable = Math.max(subtotal - discountVal, 0);
+    if (vatOn) {
+      vatVal = taxable * 0.05;
+    }
+
+    const grandTotal = taxable + vatVal + roundOffVal;
+
+    subtotalAmount.textContent = subtotal.toFixed(2) + " OMR";
+    vatAmount.textContent = vatVal.toFixed(2) + " OMR";
+    discountAmount.textContent = discountVal.toFixed(2) + " OMR";
+    roundOffAmount.textContent = roundOffVal.toFixed(2) + " OMR";
+    grandTotalAmount.textContent = grandTotal.toFixed(2) + " OMR";
+  }
+
+  // Save invoice to list
+  function saveInvoice() {
+    if (items.length === 0) {
+      alert("Add at least one item before saving.");
+      return;
+    }
+
+    const invoice = {
+      no: invoiceCounter++,
+      customer: "Job Card Customer",
+      total: grandTotalAmount.textContent,
+      date: new Date().toLocaleDateString(),
+      status: "Unpaid"
+    };
+
+    invoices.push(invoice);
+    renderInvoiceList();
+    clearInvoice();
+    alert(`Invoice #${invoice.no} saved.`);
+  }
+
+  // Render invoice list
+  function renderInvoiceList() {
+    invoiceListBody.innerHTML = "";
+    invoices.forEach(inv => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td class="border border-gray-300 px-4 py-2 text-center">${inv.no}</td>
+        <td class="border border-gray-300 px-4 py-2">${inv.customer}</td>
+        <td class="border border-gray-300 px-4 py-2 text-right">${inv.total}</td>
+        <td class="border border-gray-300 px-4 py-2 text-center">${inv.date}</td>
+        <td class="border border-gray-300 px-4 py-2 text-center">${inv.status}</td>
+      `;
+      invoiceListBody.appendChild(tr);
+    });
+  }
+
+  // Clear current invoice form
+  function clearInvoice() {
+    items = [];
+    renderItems();
+    vatToggle.checked = false;
+    discountInput.value = "";
+    roundOffInput.value = "";
+    paymentMethodSelect.value = "Cash";
+  }
+
+  // Auto-load from job card (simulate)
+  loadJobCardBtn.onclick = () => {
+    items = [
+      { description: "Oil Change Service", qty: 1, price: 40.0 },
+      { description: "Brake Pads Replacement", qty: 2, price: 60.0 },
+      { description: "Wheel Alignment", qty: 1, price: 30.0 },
+    ];
+    renderItems();
+  };
+
+  // Add item button
+  addItemBtn.onclick = () => addItem();
+
+  // VAT, discount, round off input listeners
+  vatToggle.onchange = calculateTotals;
+  discountInput.oninput = calculateTotals;
+  roundOffInput.oninput = calculateTotals;
+
+  // Download invoice as text file
+  downloadInvoiceBtn.onclick = () => {
+    if (items.length === 0) {
+      alert("Add at least one item before downloading.");
+      return;
+    }
+    const customer = "Job Card Customer";
+    const date = new Date().toLocaleDateString();
+    const paymentMethod = paymentMethodSelect.value;
+
+    let text = `Invoice\nCustomer: ${customer}\nDate: ${date}\nPayment Method: ${paymentMethod}\n\nItems:\n`;
+    items.forEach((item, i) => {
+      text += `${i + 1}. ${item.description} - Qty: ${item.qty} - Price: $${item.price.toFixed(2)} - Total: $${(item.qty * item.price).toFixed(2)}\n`;
+    });
+
+    text += `\nSubtotal: ${subtotalAmount.textContent}\nVAT (5%): ${vatAmount.textContent}\nDiscount: ${discountAmount.textContent}\nRound Off: ${roundOffAmount.textContent}\nGrand Total: ${grandTotalAmount.textContent}\n`;
+
+    const blob = new Blob([text], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `Invoice_${customer.replace(/\s+/g, "_")}.txt`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  // Print invoice
+  printInvoiceBtn.onclick = () => {
+    if (items.length === 0) {
+      alert("Add at least one item before printing.");
+      return;
+    }
+    const customer = "Job Card Customer";
+    const date = new Date().toLocaleDateString();
+    const paymentMethod = paymentMethodSelect.value;
+
+    let content = `Invoice\nCustomer: ${customer}\nDate: ${date}\nPayment Method: ${paymentMethod}\n\nItems:\n`;
+    items.forEach((item, i) => {
+      content += `${i + 1}. ${item.description} - Qty: ${item.qty} - Price: $${item.price.toFixed(2)} - Total: $${(item.qty * item.price).toFixed(2)}\n`;
+    });
+
+    content += `\nSubtotal: ${subtotalAmount.textContent}\nVAT (5%): ${vatAmount.textContent}\nDiscount: ${discountAmount.textContent}\nRound Off: ${roundOffAmount.textContent}\nGrand Total: ${grandTotalAmount.textContent}\n`;
+
+    const printWindow = window.open("", "_blank", "width=800,height=600");
+    printWindow.document.write(`<pre style="font-family: monospace; white-space: pre-wrap;">${content}</pre>`);
+    printWindow.document.close();
+    printWindow.focus();
+    printWindow.print();
+  };
+
+  // Save invoice button
+  saveInvoiceBtn.onclick = saveInvoice;
+
+  // Init with empty row
+  addItem();
+</script>
+    </div>
+
+    <!-- JavaScript for sidebar toggle -->
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    document.getElementById('sidebarToggle').addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+    });
+
+    document.getElementById('sidebarClose').addEventListener('click', () => {
+        sidebar.classList.add('-translate-x-full');
+    });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const profileBtn = document.getElementById('profileButton');
+    const dropdown = document.getElementById('profileDropdown');
+
+    profileBtn.addEventListener('click', () => {
+      dropdown.classList.toggle('hidden');
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!profileBtn.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>
+
+

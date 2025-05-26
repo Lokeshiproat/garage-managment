@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanic/Staff Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Sidebar -->
+    <!-- Toggle Button (visible only on mobile) -->
+
+
+<!-- Sidebar -->
+<div id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-white shadow-xl z-50 
+  transform -translate-x-full lg:translate-x-0 
+  transition-transform duration-300 ease-in-out">
+
+  <!-- Logo -->
+  <div class="flex items-center justify-center h-20 bg-white">
+    <div class="w-44 h-10 rounded-lg flex items-center justify-center">
+     <img src="src/images/SV0KVFfZjW2ETXN.png" alt="">
+    </div>
+  </div>
+
+  <!-- Close Button (mobile only) -->
+  <div class="lg:hidden flex justify-end px-4 py-2">
+    <button id="sidebarClose" class="text-black text-xl hover:text-red-400">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <!-- Nav -->
+  <nav class="mt-4 px-4 overflow-y-auto h-[calc(100vh-10rem)]">
+    <div class="space-y-2">
+      <a href="Dashboard.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-home mr-3 text-gray-400 group-hover:text-white"></i>
+        Dashboard
+      </a>
+      <a href="Customer Management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-users mr-3 text-gray-400 group-hover:text-white"></i>
+        Customer Management
+      </a>
+      <a href="vehicle-management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-chart-bar mr-3 text-gray-400 group-hover:text-white"></i>
+        Vehicle Management
+      </a>
+      <a href="Job Card Managemen.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-shopping-cart mr-3 text-gray-400 group-hover:text-white"></i>
+        Job Card Management
+      </a>
+      <a href="Inventory Management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-box mr-3 text-gray-400 group-hover:text-white"></i>
+        Inventory Management
+      </a>
+      <a href="Invoice.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-file-invoice mr-3 text-gray-400 group-hover:text-white"></i>
+        Billing Invoice
+      </a>
+      <a href="booking.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-calendar-check mr-3 text-gray-400 group-hover:text-white"></i>
+        Appointment / Booking
+      </a>
+      <a href="staff-management.html" class="sidebar-link flex items-center px-4 py-3 text-gray-100 bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-tools mr-3 text-gray-100 group-hover:text-white"></i>
+        Mechanic/Staff Management
+      </a>
+      <a href="repoarts.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-chart-line mr-3 text-gray-400 group-hover:text-white"></i>
+        Reports
+      </a>
+      <a href="Settings.html" class="sidebar-link flex items-center px-4 py-3 text-gray-800 bg-white hover:bg-[#7F55B1] hover:text-white rounded-lg transition-colors group">
+        <i class="fas fa-cog mr-3 text-gray-400 group-hover:text-white"></i>
+        Settings
+      </a>
+    </div>
+    
+  </nav>
+
+  <!-- Logout -->
+
+</div>
+
+ 
+
+    <!-- Main Content -->
+    <div class="lg:ml-64 flex flex-col min-h-screen">
+        <!-- Top Header -->
+     <header class="bg-white mt-1 shadow-sm border-b border-gray-200">
+  <div class="px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    
+    <!-- Left Section -->
+    <div class="flex items-center gap-4">
+      <!-- Sidebar toggle for mobile -->
+      <button id="sidebarToggle" class="lg:hidden p-2 text-gray-600 hover:bg-gray-100 rounded">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Right Section -->
+    <div class="flex items-center space-x-4 w-full sm:w-auto">
+      <!-- Search Input -->
+      <div class="relative w-full sm:w-64">
+        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        <input type="text" placeholder="Search..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+      </div>
+
+      <!-- Notification Icon -->
+      <div class="relative">
+        <button class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors">
+          <i class="fas fa-bell text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Profile Dropdown -->
+      <div class="relative">
+        <button id="profileButton" class="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none">
+          <img src="https://www.pngmart.com/files/21/Admin-Profile-Vector-PNG-Image.png" alt="Profile" class="w-8 h-8 rounded-full" />
+          <i class="fas fa-chevron-down text-gray-500"></i>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div id="profileDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+          <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a>
+          <a href="index.html" class="block px-4 py-2 text-red-600 hover:bg-red-100">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="min-h-screen bg-gray-100 font-sans text-gray-900">
+
+  <!-- Header -->
+  <header class=" py-6 px-8 ">
+    <h1 class="text-xl font-medium">
+      Mechanic / Staff Management Dashboard
+    </h1>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="max-w-screen-xl mx-auto p-6 space-y-10">
+
+    <!-- Staff Management Section -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Add/Edit Staff Form -->
+      <div class="md:col-span-1 bg-white rounded-lg shadow-lg p-6 flex flex-col">
+        <h2 class="text-xl font-semibold mb-6 border-b pb-2">Add / Edit Staff</h2>
+        <form id="staffForm" class="flex flex-col space-y-4">
+          <input type="hidden" id="staffIndex" value="-1" />
+          <div>
+            <label for="name" class="block font-medium mb-1">Name <span class="text-red-500">*</span></label>
+            <input type="text" id="name" placeholder="Enter full name" required
+              class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-600" />
+          </div>
+          <div>
+            <label for="role" class="block font-medium mb-1">Role <span class="text-red-500">*</span></label>
+            <select id="role" required
+              class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
+              <option value="" disabled selected>Select Role</option>
+              <option value="Mechanic">Mechanic</option>
+              <option value="Service Advisor">Service Advisor</option>
+              <option value="Staff">Staff</option>
+            </select>
+          </div>
+          <div>
+            <label for="contact" class="block font-medium mb-1">Contact <span class="text-red-500">*</span></label>
+            <input type="text" id="contact" placeholder="Phone or Email" required
+              class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-600" />
+          </div>
+          <div>
+            <label for="assignedJobsSummary" class="block font-medium mb-1">Assigned Jobs Summary</label>
+            <textarea id="assignedJobsSummary" rows="3" placeholder="E.g. 3 jobs today"
+              class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+          </div>
+          <div class="flex justify-between mt-4">
+            <button type="submit"
+              class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-md hover:bg-blue-700 transition">
+              Save Staff
+            </button>
+            <button type="button" id="clearForm"
+              class="border border-gray-400 px-6 py-2 rounded-md hover:bg-gray-100 transition">
+              Clear
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Staff List -->
+      <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6 flex flex-col">
+        <h2 class="text-xl font-semibold mb-6 border-b pb-2">Staff List</h2>
+        <div id="staffList" class="overflow-y-auto max-h-[400px] space-y-4">
+          <!-- Staff cards injected here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Mechanic Dashboard Section -->
+    <section class="bg-white rounded-lg shadow-lg p-6">
+      <h2 class="text-xl font-semibold mb-6 border-b pb-2">Mechanic Dashboard - Assigned Jobs Today</h2>
+      <div id="mechanicJobsList" class="space-y-4 max-h-[400px] overflow-y-auto">
+        <!-- Jobs list injected here -->
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Data
+    let staffData = [];
+    let mechanicJobs = [
+      { id: 1, title: "Job #1 - AC Repair", status: "Not Started" },
+      { id: 2, title: "Job #2 - Oil Change", status: "Not Started" },
+      { id: 3, title: "Job #3 - Tire Replacement", status: "Not Started" },
+    ];
+
+    // Elements
+    const staffForm = document.getElementById('staffForm');
+    const staffListDiv = document.getElementById('staffList');
+    const mechanicJobsDiv = document.getElementById('mechanicJobsList');
+    const clearFormBtn = document.getElementById('clearForm');
+    const staffIndexInput = document.getElementById('staffIndex');
+
+    // Render Staff List
+    function renderStaffList() {
+      if (staffData.length === 0) {
+        staffListDiv.innerHTML = `<p class="text-center text-gray-500 py-8">No staff added yet.</p>`;
+        return;
+      }
+      staffListDiv.innerHTML = staffData
+        .map(
+          (staff, index) => `
+        <div
+          class="border rounded-md p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-50 hover:bg-gray-100 transition cursor-pointer"
+          onclick="editStaff(${index})"
+          title="Click to edit"
+        >
+          <div class="space-y-1">
+            <p><span class="font-semibold">Name:</span> ${staff.name}</p>
+            <p><span class="font-semibold">Role:</span> ${staff.role}</p>
+            <p><span class="font-semibold">Contact:</span> ${staff.contact}</p>
+            <p><span class="font-semibold">Assigned Jobs:</span> ${staff.assignedJobsSummary || 'None'}</p>
+          </div>
+          <button
+            onclick="event.stopPropagation(); deleteStaff(${index});"
+            class="ml-4 bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition"
+            aria-label="Delete staff"
+          >
+            Delete
+          </button>
+        </div>
+      `
+        )
+        .join('');
+    }
+
+    // Delete Staff
+    function deleteStaff(index) {
+      if (confirm("Are you sure you want to delete this staff?")) {
+        staffData.splice(index, 1);
+        renderStaffList();
+      }
+    }
+
+    // Render Mechanic Jobs List
+    function renderMechanicJobs() {
+      if (mechanicJobs.length === 0) {
+        mechanicJobsDiv.innerHTML = `<p class="text-center text-gray-500 py-8">No jobs assigned today.</p>`;
+        return;
+      }
+      mechanicJobsDiv.innerHTML = mechanicJobs
+        .map(
+          (job) => `
+        <div
+          class="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-gray-50 rounded-md p-4 shadow-sm hover:shadow-md transition"
+        >
+          <div class="font-medium text-gray-700 mb-3 sm:mb-0">${job.title}</div>
+          <div>
+            <label for="status-${job.id}" class="sr-only">Update Status for ${job.title}</label>
+            <select
+              id="status-${job.id}"
+              onchange="updateJobStatus(${job.id}, this.value)"
+              class="rounded border border-gray-300 p-2 text-gray-700 focus:ring-2 focus:ring-blue-600 w-full sm:w-auto"
+            >
+              <option value="Not Started" ${job.status === "Not Started" ? "selected" : ""}>
+                Not Started
+              </option>
+              <option value="Started" ${job.status === "Started" ? "selected" : ""}>Started</option>
+              <option value="In Progress" ${job.status === "In Progress" ? "selected" : ""}>
+                In Progress
+              </option>
+              <option value="Done" ${job.status === "Done" ? "selected" : ""}>Done</option>
+            </select>
+          </div>
+        </div>
+      `
+        )
+        .join("");
+    }
+
+    // Update Job Status
+    function updateJobStatus(jobId, newStatus) {
+      const job = mechanicJobs.find((j) => j.id === jobId);
+      if (job) {
+        job.status = newStatus;
+        renderMechanicJobs();
+      }
+    }
+
+    // Edit staff (populate form)
+    function editStaff(index) {
+      const staff = staffData[index];
+      staffIndexInput.value = index;
+      document.getElementById("name").value = staff.name;
+      document.getElementById("role").value = staff.role;
+      document.getElementById("contact").value = staff.contact;
+      document.getElementById("assignedJobsSummary").value = staff.assignedJobsSummary || "";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Clear form
+    clearFormBtn.addEventListener("click", () => {
+      staffForm.reset();
+      staffIndexInput.value = -1;
+    });
+
+    // Handle form submit
+    staffForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const index = parseInt(staffIndexInput.value);
+      const name = document.getElementById("name").value.trim();
+      const role = document.getElementById("role").value;
+      const contact = document.getElementById("contact").value.trim();
+      const assignedJobsSummary = document.getElementById("assignedJobsSummary").value.trim();
+
+      if (!name || !role || !contact) {
+        alert("Please fill all required fields (Name, Role, Contact).");
+        return;
+      }
+
+      const staffObj = { name, role, contact, assignedJobsSummary };
+
+      if (index >= 0 && index < staffData.length) {
+        staffData[index] = staffObj;
+      } else {
+        staffData.push(staffObj);
+      }
+
+      staffForm.reset();
+      staffIndexInput.value = -1;
+      renderStaffList();
+
+      alert("Staff saved successfully!");
+    });
+
+    // Initial render
+    renderStaffList();
+    renderMechanicJobs();
+  </script>
+
+
+
+
+
+
+</div>
+
+</div>
+
+<script>
+    const sidebar = document.getElementById('sidebar');
+    document.getElementById('sidebarToggle').addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+    });
+
+    document.getElementById('sidebarClose').addEventListener('click', () => {
+        sidebar.classList.add('-translate-x-full');
+    });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const profileBtn = document.getElementById('profileButton');
+    const dropdown = document.getElementById('profileDropdown');
+
+    profileBtn.addEventListener('click', () => {
+      dropdown.classList.toggle('hidden');
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!profileBtn.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>
